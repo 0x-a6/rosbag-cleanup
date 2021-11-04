@@ -64,7 +64,7 @@ def get_next(it, offset) -> tuple:
     except StopIteration: 
         return None
 
-def merge_bag(bagfiles, outfile = None, reindex = True) -> None:
+def merge_bag(bagfiles, outfile = None) -> None:
     # ingest bag data
     bags = []
     for bag_path in bagfiles:
@@ -104,6 +104,10 @@ def merge_bag(bagfiles, outfile = None, reindex = True) -> None:
 
 if __name__ == "__main__":
     args = parse_args()
+<<<<<<< HEAD
     merge_bag(args.bagfiles)
+=======
+    merge_bag(args.bagfiles, output=args.output)
+>>>>>>> 1bdf95d67a3641557ba18d6938e059f023ce91a2
 
     
