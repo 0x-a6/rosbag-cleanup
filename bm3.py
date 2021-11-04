@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from ast import parse
 import rosbag
 import time
@@ -20,8 +20,6 @@ def parse_args() -> None:
         description='Merges bagfiles.')
     parser.add_argument('-o', type=str, help='name of the output file', 
         default = None, metavar = "output_file")
-    parser.add_argument('-i', help='reindex bagfile', 
-        default = False, action="store_true")
     parser.add_argument('bagfiles', nargs='+', help='path to a bagfile which should be merged to the main bagfile')
     args = parser.parse_args()
 
@@ -106,8 +104,6 @@ def merge_bag(bagfiles, outfile = None, reindex = True) -> None:
 
 if __name__ == "__main__":
     args = parse_args()
-    # topic merging ... leaving it here doing nothing with it
-    # args.t = args.t.split(',') if args.t != None else args.t
     merge_bag(args.bagfiles)
 
     
