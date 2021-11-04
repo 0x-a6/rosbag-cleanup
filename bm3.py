@@ -104,10 +104,6 @@ def merge_bag(bagfiles, outfile = None) -> None:
 
 if __name__ == "__main__":
     args = parse_args()
-<<<<<<< HEAD
-    merge_bag(args.bagfiles)
-=======
     merge_bag(args.bagfiles, output=args.output)
->>>>>>> 1bdf95d67a3641557ba18d6938e059f023ce91a2
 
     
