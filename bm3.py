@@ -86,7 +86,7 @@ def merge_bag(bagfiles, outfile = None, reindex = True) -> None:
     outfile = f'{bags[0].path}_merged_{index}.bag' if outfile == None else f'{outfile}'
 
     while (os.path.exists(f'{outfile}')):
-        outfile = re.sub('_merged_[0-9]?', f'_merged_{index}', outfile)
+        outfile = re.sub('_merged_[0-9]*', f'_merged_{index}', outfile)
         index += 1
     
     # #merge bagfile
