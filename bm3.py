@@ -75,7 +75,7 @@ def merge_bag(bagfiles, outfile=None) -> None:
             pass # ignore any files that aren't ROS bags
 
     if len(bags) < 2:
-        raise ValueError("Not enough bag files to merge")
+        raise ValueError(f"Not enough bag files to merge. Bags: {len(bags)}")
 
     # sort bags on start date
     bags.sort(key=lambda x:x.start)
@@ -104,6 +104,6 @@ def merge_bag(bagfiles, outfile=None) -> None:
 
 if __name__ == "__main__":
     args = parse_args()
-    merge_bag(args.bagfiles, outfile=args.outfile)
+    merge_bag(args.bagfiles, outfile=args.o)
 
     
